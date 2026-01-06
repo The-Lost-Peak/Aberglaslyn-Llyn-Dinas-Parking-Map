@@ -62,17 +62,15 @@
     mapboxgl.accessToken = "pk.eyJ1IjoicmVtbWlhZ2JlYmkiLCJhIjoiY21odHRrYTQzMTk0bjJqcjE1b2xhZ2FraSJ9.nTCz33gX0gQt3T4A6VD0oQ";
 
     const carParks = [
-      { name: "Main Parking",  coords: [-1.8151654585819856, 53.364921556005875] },
-      { name: "Alternative 1", coords: [-1.819278, 53.364083] },
-      { name: "Alternative 2", coords: [-1.8172716521699483, 53.36479102831055] },
-      { name: "Alternative 3", coords: [-1.812361, 53.364417] }
+      { name: "Main Parking",  coords: [-4.091945709097257, 52.99502778883949] },
+      { name: "Alternative 1", coords: [-4.1053164153449915, 53.013156277034625] }
     ];
 
     const map = new mapboxgl.Map({
       container: "map",
       style: "mapbox://styles/mapbox/satellite-streets-v12",
       center: carParks[0].coords,
-      zoom: 15
+      zoom: 14
     });
 
     map.addControl(new mapboxgl.FullscreenControl(), "top-right");
@@ -111,7 +109,7 @@
         if (openPopup) openPopup.remove();
         popup.setLngLat(p.coords).addTo(map);
         openPopup = popup;
-        map.flyTo({ center: p.coords, zoom: 15, essential: true });
+        map.flyTo({ center: p.coords, zoom: 14, essential: true });
       });
     });
 
@@ -126,7 +124,7 @@
         .addTo(map);
 
       openPopup = firstPopup;
-      map.flyTo({ center: first.coords, zoom: 15, essential: true });
+      map.flyTo({ center: first.coords, zoom: 14, essential: true });
     });
   </script>
 </body>
